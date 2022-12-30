@@ -1,0 +1,6 @@
+---
+
+- name: updating
+  yum:
+    name: update
+    state: present
