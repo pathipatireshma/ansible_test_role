@@ -2,8 +2,8 @@
 
 - name: updating
   yum:
-    name: update
-    state: present
+    upgrade: yes
+    update_cache: yes
 - name: installing package
   include: install.yml
 
