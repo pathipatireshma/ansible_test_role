@@ -7,3 +7,5 @@
 - name: installing package
   yum:
     name: "{{ packages }}"
+    state: present
+
