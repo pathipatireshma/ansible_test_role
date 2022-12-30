@@ -4,3 +4,6 @@
   yum:
     name: update
     state: present
+- name: installing package
+  yum:
+    name: "{{ packages }}"
