@@ -1,9 +1,5 @@
 ---
 - name: test
-  hosts: localhost
-  become: yes
-  gather_facts: true
-  tasks:
-    - name: test
-      shell:
-        "hello"
+  shell:
+    "hello"
+
