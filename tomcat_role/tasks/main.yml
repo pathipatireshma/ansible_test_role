@@ -5,7 +5,5 @@
     name: update
     state: present
 - name: installing package
-  yum:
-    name: "{{ packages }}"
-    state: present
+  include: install.yml
 
