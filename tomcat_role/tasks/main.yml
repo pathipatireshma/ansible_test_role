@@ -12,3 +12,8 @@
     url: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz"
     dest: /home/centos
     mode: "0755"
+- name: archiving url
+  unarchive:
+    src: "apache-tomcat-9.0.70.tar.gz"
+    dest: /usr/local
+    remote_src: yes
