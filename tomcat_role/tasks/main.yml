@@ -4,7 +4,7 @@
   yum:
     name: update
     state: present
-    update_cache: yes
+#    update_cache: yes
 - name: installing package
   include: install.yml
 - name: downloading url
