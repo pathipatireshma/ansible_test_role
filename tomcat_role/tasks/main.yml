@@ -14,7 +14,7 @@
     dest: /home/centos
     mode: "0755"
 - name: archiving url
-  unarchive:
-    src: "apache-tomcat-9.0.70.tar.gz"
+  ansible.builtin.unarchive:
+    src: "/home/centos/apache-tomcat-9.0.70.tar.gz"
     dest: /usr/local
     remote_src: yes
