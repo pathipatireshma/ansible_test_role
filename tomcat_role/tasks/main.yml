@@ -18,7 +18,9 @@
     src: "/home/centos/apache-tomcat-9.0.70.tar.gz"
     dest: /usr/local
     remote_src: yes
+    mode: "0755"
 - name: moving tomcat-9.0.70 to tomcat9
+  become_user: root
   copy:
     src: /usr/local/apache-tomcat-9.0.70
     dest: /usr/local/tomcat9
