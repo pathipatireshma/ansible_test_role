@@ -1,0 +1,13 @@
+---
+
+- name: creating a group
+  group:
+    name: tomcat
+    state: present
+
+- name: creating a user
+  user:
+    name: tomcat
+    group: tomcat
+    state: present
+    system: true
