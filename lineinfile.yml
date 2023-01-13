@@ -1,6 +1,6 @@
 ---
-- name: new file
-  hosts: localhost
+#- name: new file
+- hosts: localhost
   become: yes
   gather_facts: true
 - tasks:
