@@ -27,7 +27,7 @@
 - name: moving tomcat-10.0.8 to tomcat
   become_user: root
   copy:
-    src: /home/centos/apache-tomcat-10.0.8
+    src: /home/ubuntu/apache-tomcat-10.0.8
     dest: /opt/tomcat/
     mode: "0755"
 - name: creating a group
