@@ -16,4 +16,4 @@
 #        regexp: 'hi'
         line: '<!--'
         insertbefore: 'hi'
-        backrefs: yes
+#        backrefs: yes
