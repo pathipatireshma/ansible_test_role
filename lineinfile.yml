@@ -1,7 +1,7 @@
 ---
 - name: lineinfile
-  gather_facts: true
   hosts: localhost
+  gather_facts: true
   become: true
 - tasks:
     - name: create a file
