@@ -15,7 +15,7 @@
     mode: "0755"
 - name: archiving url
   ansible.builtin.unarchive:
-    src: "/home/centos/apache-tomcat-10.0.8.tar.gz"
+    src: "/home/ubuntu/apache-tomcat-10.0.8.tar.gz"
     dest: /home/ubuntu
     remote_src: yes
     mode: "0755"
