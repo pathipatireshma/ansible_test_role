@@ -1,8 +1,8 @@
 ---
-- name: lineinfile
+- name: new file
   hosts: localhost
+  become: yes
   gather_facts: true
-  become: true
 - tasks:
     - name: create a file
       file:
