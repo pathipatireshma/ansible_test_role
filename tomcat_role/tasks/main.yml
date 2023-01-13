@@ -9,19 +9,33 @@
   import_tasks: install.yml
 - name: downloading url
   get_url:
-    url: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz"
+    url: "https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.8/bin/apache-tomcat-10.0.8.tar.gz"
 #    dest: /usr/local
-    dest: /home/centos
+    dest: /home/ubuntu
     mode: "0755"
 - name: archiving url
   ansible.builtin.unarchive:
-    src: "/home/centos/apache-tomcat-9.0.70.tar.gz"
-    dest: /usr/local
+    src: "/home/centos/apache-tomcat-10.0.8.tar.gz"
+    dest: /home/ubuntu
     remote_src: yes
     mode: "0755"
-- name: moving tomcat-9.0.70 to tomcat9
+- name: creating a directory
+  file:
+    path: /opt/tomcat/
+    state: directory
+    mode: "0755"
+- name: moving tomcat-10.0.8 to tomcat
   become_user: root
   copy:
-    src: /usr/local/apache-tomcat-9.0.70
-    dest: /usr/local/tomcat9
+    src: /home/centos/apache-tomcat-10.0.8
+    dest: /opt/tomcat/
     mode: "0755"
+- name: creating a group
+  group:
+    name: "{{ group }}"
+    state: present
+- name: creating a user
+  user:
+    name: "{{ user }}"
+    group: "{{ group }}"
+    state: present
