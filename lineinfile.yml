@@ -11,6 +11,7 @@
         state: touch
     - name: comment a line
       lineinfile:
+        path: /home/ubuntu/lineinfile
         state: present
         regexp: 'hi'
         line: '<!--'
