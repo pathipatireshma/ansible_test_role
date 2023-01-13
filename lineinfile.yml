@@ -3,9 +3,14 @@
   hosts: localhost
   become: yes
   gather_facts: true
-- tasks:
+  tasks:
     - name: create a file
       file:
         name: lineinfile
         path: /home/ubuntu/
         state: touch
+    - name: comment a line
+      lineinfile:
+        state: present
+        regexp: 'hi'
+        line: '<!--'
