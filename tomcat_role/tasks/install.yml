@@ -1,6 +1,6 @@
 - name: installing packages
   apt:
-    name: "java-11-openjdk-devel"
+    name: "default-jdk"
     state: present
 #    name: "{{ item }}"
 #    state: present
