@@ -12,8 +12,8 @@
     - name: comment a line
       lineinfile:
         path: /home/ubuntu/ansible_test_role/lineinfile
-#        state: present
+        state: present
         regexp: 'hi'
-#        line: '<!--'
+        line: 'hi'
         insertbefore: '<!--'
-#        backrefs: yes
+        backrefs: yes
