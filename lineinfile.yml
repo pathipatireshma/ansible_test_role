@@ -1,0 +1,11 @@
+---
+- name: lineinfile
+  gather_facts: true
+  hosts: localhost
+  become: true
+- tasks:
+    - name: create a file
+      file:
+        name: lineinfile
+        path: /home/centos/
+        state: touch

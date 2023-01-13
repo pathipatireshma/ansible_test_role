@@ -19,17 +19,6 @@
     dest: /home/ubuntu
     remote_src: yes
     mode: "0755"
-- name: creating a directory
-  file:
-    path: /opt/tomcat/
-    state: directory
-    mode: "0755"
-- name: moving tomcat-10.0.8 to tomcat
-  become_user: root
-  copy:
-    src: /home/ubuntu/apache-tomcat-10.0.8
-    dest: /opt/tomcat/
-    mode: "0755"
 - name: creating a group
   group:
     name: "{{ group }}"
@@ -39,3 +28,24 @@
     name: "{{ user }}"
     group: "{{ group }}"
     state: present
+- name: creating a directory
+  file:
+    path: /opt/tomcat/
+    state: directory
+    group: tomcat
+    owner: tomcat
+    mode: "0755"
+- name: moving tomcat-10.0.8 to tomcat
+  become_user: root
+  copy:
+    src: /home/ubuntu/apache-tomcat-10.0.8
+    dest: /opt/tomcat/
+    mode: "0755"
+- name:  Reloading the systemd daemon service
+  ansible.builtin.systemd:
+    daemon_reload: yes
+- name: starting the tomcat service
+  service:
+    name: tomcat
+    state: started
+    enabled: true
