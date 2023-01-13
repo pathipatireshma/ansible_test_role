@@ -1,7 +1,7 @@
 ---
 
 - name: updating
-  yum:
+  apt:
 #    name: update
 #    state: present
     update_cache: yes

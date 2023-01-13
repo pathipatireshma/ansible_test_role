@@ -1,5 +1,5 @@
 - name: installing packages
-  yum:
+  apt:
     name: "java-11-openjdk-devel"
     state: present
 #    name: "{{ item }}"
