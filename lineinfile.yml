@@ -13,6 +13,7 @@
       lineinfile:
         path: /home/ubuntu/ansible_test_role/lineinfile
         state: present
-        regexp: 'hi'
+#        regexp: 'hi'
         line: '<!--'
+        insertbefore: 'hi'
         backrefs: yes
