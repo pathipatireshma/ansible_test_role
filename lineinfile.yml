@@ -11,7 +11,7 @@
         state: touch
     - name: comment a line
       lineinfile:
-        path: /home/ubuntu/lineinfile
+        path: /home/ubuntu/ansible_test_role/lineinfile
         state: present
         regexp: 'hi'
         line: '<!--'
