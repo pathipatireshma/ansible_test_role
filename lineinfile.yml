@@ -7,5 +7,5 @@
     - name: create a file
       file:
         name: lineinfile
-        path: /home/centos/
+        path: /home/ubuntu/
         state: touch
