@@ -41,11 +41,11 @@
     src: /home/ubuntu/apache-tomcat-10.0.8
     dest: /opt/tomcat/
     mode: "0755"
-- name: commenting lines in manager/context.xml
-  lineinfile:
-    path: /opt/tomcat/webapps/manager/META-INF/context.xml
-    state: present
-  loop:
+#- name: commenting lines in manager/context.xml
+#  lineinfile:
+#    path: /opt/tomcat/webapps/manager/META-INF/context.xml
+#    state: present
+#  loop:
 
 - name:  Reloading the systemd daemon service
   ansible.builtin.systemd:
