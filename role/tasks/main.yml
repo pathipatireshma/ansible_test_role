@@ -21,6 +21,11 @@
   apt:
     name: docker-ce
     state: present
+- name: full_update
+  apt:
+    update_cache: true
+    upgrade: "full"
+    state: "latest"
 - name: install Docker-io
   apt:
     name: docker.io
