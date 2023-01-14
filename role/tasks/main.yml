@@ -10,7 +10,7 @@
     state: "latest"
 - name: Adding Docker repository GPG key
   get_url:
-    url: "https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -"
+    url: "https://download.docker.com/linux/ubuntu/gpg"
     dest: "/home/ubuntu"
     mode: "0755"
 
