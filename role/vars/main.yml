@@ -1,5 +1,5 @@
 ---
-- packages:
+packages:
     - apt-transport-https
     - ca-certificates
     - curl
