@@ -1,6 +1,16 @@
 ---
-- name: test
-  shell:
-    "echo 'hello'"
+- name: update
+  apt:
+    update_cache: true
+    upgrade: "dist"
+    state: "latest"
+- name: installing prerequisite packages
+  apt:
+    name: "{{ packages }}"
+    state: "latest"
+
+
+
+
 
 
