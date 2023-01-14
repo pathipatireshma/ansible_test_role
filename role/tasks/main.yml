@@ -13,6 +13,10 @@
     url: "https://download.docker.com/linux/ubuntu/gpg"
     dest: "/home/ubuntu"
     mode: "0755"
+- name: Adding Docker repository
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    state: present
 
 
 
