@@ -13,15 +13,11 @@
       lineinfile:
         path: /home/ubuntu/ansible_test_role/lineinfile
         state: present
-        regexp: 'hi'
-        line: '<!--hi'
-#        insertbefore: '<!--'
-        backrefs: yes
-    - name: comment a line1
-      lineinfile:
-        path: /home/ubuntu/ansible_test_role/lineinfile
-        state: present
-        regexp: 'hello'
-        line: '<!--hello'
-#        insertbefore: '<!--'
-        backrefs: yes
+        mode: '0755'
+        line: "{{ item.line }}"
+        insertbefore: '<!--'
+      loop:
+        - {line: 'hello'}
+        - {line: 'hi'}
+
+
